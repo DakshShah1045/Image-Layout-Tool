@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Layout Dashboard</title>
+<link rel="stylesheet" type="text/css" href="image.css">
+
+</head>
+<body>
+  <header class="header">
+    <div>
+      <input type="file" id="uploadImage" accept="image/*" />
+      <button onclick="exportLayout()">Export</button>
+      <button onclick="saveLayout()">Save</button>
+      <button onclick="loadLayout()">Load</button>
+       
+    </div>
+    <div class="control-btns">
+    <button onclick="hideLayout()">Hide</button>
+      <button onclick="deleteImage()">Delete</button>
+      <button onclick="print()">Print</button>
+    </div>
+
+    <div class="control-btns">
+  <label>Outline:</label>
+  <button onclick="setOutline('none')">None</button>
+  
+  <button onclick="setOutline('4px solid black')">Thick Black</button>
+</div>
+
+  </header>
+  <div id="canvas"></div>
+<footer>
+  <p>Developed By Daksh Hiral Shah . <a href="https://dakshshah1045.github.io/Portfolio/">Byte Tech Labs</a>
+  </p>
+</footer>
+  <script src="image.js">
+
+
+  </script>
+
+  <!-- CDN for html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #e6e9f0;
+  }
+  header {
+    padding: 10px 15px;
+    background: #202034;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  header input[type="file"] {
+    padding: 5px;
+  }
+  .control-btns, header > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: white;
+    padding: 5px 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.2s ease;
+  }
+  button:hover {
+    background-color: white;
+    color: #202034;
+  }
+  #canvas {
+
+
+
+
+
+  min-height: 500vh; /* Makes canvas tall enough */
+
+
+    flex: 1;
+    position: relative;
+    background: linear-gradient(45deg, #fafafa 25%, #f0f0f0 25%, #f0f0f0 50%, #fafafa 50%, #fafafa 75%, #f0f0f0 75%, #f0f0f0);
+    
+
+    border-top: 2px solid #ccc;
+  }
+  .img-box {
+    position: absolute;
+    padding: 0;
+    border: 2px dashed transparent;
+    transition: border 0.2s;
+  }
+  .img-box.active {
+    border-color: #0077ff;
+  }
+  .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+  }
+  .resize-handle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    cursor: se-resize;
+    z-index: 10;
+    border-radius: 3px 0 0 0;
+  }
+
+  @media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #canvas {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: visible !important;
+  }
+
+  .img-box {
+    page-break-inside: avoid;
+  }
+
+  .resize-handle, 
+  header, 
+  button, 
+  input {
+    display: none !important; /* Hide UI elements in print */
+  }
+
+  img {
+    max-width: 100% !important; /* Prevent going out of bounds */
+    height: auto;
+    outline-offset: 0px;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1e1e2f;
+  color: white;
+  text-align: center;
+  padding: 4px;
+  font-size: 22px;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+a {
+  text-decoration: underline;
+  color: white;
+}
+
+/* Hide footer when printing */
+@media print {
+  footer {
+    display: none;
+  }
+}
